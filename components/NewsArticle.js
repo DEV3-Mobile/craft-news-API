@@ -11,7 +11,8 @@ const NewsArticle = props => {
     try {
       let url;
       if (Platform.OS == 'android') {
-        url = "http://10.0.2.2:63469/api/news/";
+        //ddev describe om port number te weten te komen
+        url = "http://10.0.2.2:<vul port in>/api/news/";
       }
       else {
         url = "http://craft-news-a.ddev.site/api/news/";
@@ -22,7 +23,8 @@ const NewsArticle = props => {
       });
       const json = await response.json();
       if (Platform.OS == 'android') {
-        json.headerImg = json.headerImg.replace("craft-news-a.ddev.site", "10.0.2.2:63469");
+        //ddev describe om port number te weten te komen
+        json.headerImg = json.headerImg.replace("craft-news-a.ddev.site", "10.0.2.2:<vul port in>");
       }
       setArticle(json);
     } catch (error) {

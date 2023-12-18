@@ -13,7 +13,8 @@ const NewsScreen = ({ navigation }) => {
 
       let url;
       if (Platform.OS == 'android') {
-        url = "http://10.0.2.2:63469/api/news/";
+        //ddev describe om port number te weten te komen
+        url = "http://10.0.2.2:<vul port in>/api/news/";
       }
       else {
         url = "http://craft-news-a.ddev.site/api/news/";
@@ -42,7 +43,8 @@ const NewsScreen = ({ navigation }) => {
         keyExtractor={item => item.id}//gebruik id als key voor de flatlist
         renderItem={({ item }) => {
           if (Platform.OS == 'android') {
-            item.bannerImg = item.bannerImg.replace('craft-news-a.ddev.site', '10.0.2.2:63469')
+            //ddev describe om port number te weten te komen
+            item.bannerImg = item.bannerImg.replace('craft-news-a.ddev.site', '10.0.2.2:<vul port in>')
           }
           // console.log(item.bannerImg);
           return <NewsItem
