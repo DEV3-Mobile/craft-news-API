@@ -7,7 +7,8 @@ const NewsArticle = props => {
   const [article, setArticle] = useState({});
   const getArticleData = async () => {
     //console.log(props.articleId);
-    //request naar 
+    //10.0.2.2:60628
+    //http://craft-news-b.ddev.site
     try {
       let url;
       if (Platform.OS == 'android') {
